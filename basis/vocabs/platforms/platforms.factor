@@ -42,6 +42,10 @@ SYNTAX: <FREEBSD
     "FREEBSD>" parse-multiline-string
     os freebsd? [ ".freebsd" parse-platform-section ] [ drop ] if ;
 
+SYNTAX: <HAIKU
+    "HAIKU>" parse-multiline-string
+    os haiku? [ ".haiku" parse-platform-section ] [ drop ] if ;
+
 SYNTAX: <MACOSX
     "MACOSX>" parse-multiline-string
     os macosx? [ ".macosx" parse-platform-section ] [ drop ] if ;
@@ -75,6 +79,10 @@ SYNTAX: <!FREEBSD
     "!FREEBSD>" parse-multiline-string
     os freebsd? [ drop ] [ ".freebsd" parse-platform-section ] if ;
 
+SYNTAX: <!HAIKU
+    "!HAIKU>" parse-multiline-string
+    os haiku? [ drop ] [ ".haiku" parse-platform-section ] if ;
+
 SYNTAX: <!MACOSX
     "!MACOSX>" parse-multiline-string
     os macosx? [ drop ] [ ".macosx" parse-platform-section ] if ;
@@ -90,6 +98,7 @@ SYNTAX: <!WINDOWS
 SYNTAX: USE-UNIX: scan-token os unix? [ use-vocab ] [ drop ] if ;
 SYNTAX: USE-BSD: scan-token os bsd? [ use-vocab ] [ drop ] if ;
 SYNTAX: USE-FREEBSD: scan-token os freebsd? [ use-vocab ] [ drop ] if ;
+SYNTAX: USE-HAIKU: scan-token os haiku? [ use-vocab ] [ drop ] if ;
 SYNTAX: USE-MACOSX: scan-token os macosx? [ use-vocab ] [ drop ] if ;
 SYNTAX: USE-LINUX: scan-token os linux? [ use-vocab ] [ drop ] if ;
 SYNTAX: USE-WINDOWS: scan-token os windows? [ use-vocab ] [ drop ] if ;

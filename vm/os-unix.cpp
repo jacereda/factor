@@ -302,7 +302,9 @@ void factor_vm::unix_init_signals() {
     sigaction_safe(SIGUSR1, &enqueue_sigaction, NULL);
     sigaction_safe(SIGCONT, &enqueue_sigaction, NULL);
     sigaction_safe(SIGURG, &enqueue_sigaction, NULL);
+#ifdef SIGIO
     sigaction_safe(SIGIO, &enqueue_sigaction, NULL);
+#endif
     sigaction_safe(SIGPROF, &enqueue_sigaction, NULL);
     sigaction_safe(SIGVTALRM, &enqueue_sigaction, NULL);
 #ifdef SIGINFO

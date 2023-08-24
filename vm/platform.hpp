@@ -39,6 +39,14 @@
         #else
             #error "Unsupported FreeBSD flavor"
         #endif
+    #elif defined(__HAIKU__)
+      #define FACTOR_OS_STRING "haiku"
+      #include "os-haiku.hpp"
+      #if defined(FACTOR_AMD64)
+        #include "os-haiku-x86.64.hpp"
+      #else
+        #error "Unsupported Haiku flavor"
+      #endif
     #elif defined(__linux__)
       #define FACTOR_OS_STRING "linux"
       #include "os-linux.hpp"

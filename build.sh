@@ -270,6 +270,7 @@ find_num_cores() {
         CYGWIN_NT-5.2-WOW64 | *CYGWIN_NT* | *CYGWIN* | MINGW32*) NUM_CORES=$NUMBER_OF_PROCESSORS ;;
         *linux* | *Linux*) NUM_CORES=$(getconf _NPROCESSORS_ONLN || nproc) ;;
         *darwin* | *Darwin* | freebsd) NUM_CORES=$(sysctl -n hw.ncpu) ;;
+		*Haiku*) NUM_CORES=16 ;;
     esac
 }
 
@@ -781,4 +782,3 @@ case "$1" in
     update-boot-image) find_build_info; check_installed_programs; update_boot_image ;;
     *) usage ;;
 esac
-
