@@ -13,7 +13,7 @@ FUNCTION-ALIAS: (uname)
 
 : uname ( -- seq )
     256 <byte-array> [ (uname) io-error ] keep >string
-	"\0" split harvest dup length 6 assert= ;
+    "\0" split harvest dup length 6 assert= ;
 
 : sysname ( -- string ) 0 uname nth ;
 : nodename ( -- string ) 1 uname nth ;

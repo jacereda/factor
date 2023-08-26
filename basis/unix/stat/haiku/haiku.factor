@@ -12,11 +12,11 @@ STRUCT: stat
     { st_size off_t }
     { st_rdev dev_t }
     { st_blksize blksize_t }
-    { st_atim timespec }
-    { st_mtim timespec }
-    { st_ctim timespec }
+    { st_atimespec timespec }
+    { st_mtimespec timespec }
+    { st_ctimespec timespec }
     { st_crtim timespec }
-	{ st_type __uint32_t }
+    { st_type __uint32_t }
     { st_blocks blkcnt_t } ;
 
 FUNCTION-ALIAS: stat-func int stat  ( c-string pathname, stat* buf )
